@@ -1,5 +1,4 @@
-import React, { Suspense } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import React from "react";
 
 import { useTheme } from "app/providers/ThemeProvider";
 
@@ -7,17 +6,19 @@ import { classNames } from "shared/helpers/classNames/classNames";
 import "./styles/index.scss";
 
 import { AppRouter } from "./providers/router";
+import { Navbar } from "widjets/Navbar";
+import { Sidebar } from "widjets/Sidebar";
 
 const App: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <button onClick={toggleTheme}> Toggle Theme</button>
-      <Link to={"/"}>Main Page</Link>
-      <Link to={"/about"}>About Page</Link>
-      <AppRouter />
-      App container 123
+      <Navbar />
+      <div className="contentPage">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
