@@ -15,3 +15,6 @@ declare module "*.svg" {
   const SVG: React.VFC<React.SVGAttributes<SVGElement>>;
   export default SVG;
 }
+
+declare const __IS__DEV: boolean;
+declare const __IS__ENG: boolean;
