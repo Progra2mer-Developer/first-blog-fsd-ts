@@ -17,7 +17,7 @@ export function buildPlugins({
             chunkFilename: 'css/[name].[contenhtash:8].css',
         }),
         new webpack.DefinePlugin({
-            __IS__DEV: JSON.stringify(isDev),
+            __IS__DEV__: JSON.stringify(isDev),
         }),
     // new webpack.HotModuleReplacementPlugin(),
     ];
