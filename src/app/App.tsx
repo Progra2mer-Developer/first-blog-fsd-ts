@@ -7,15 +7,15 @@ import "./styles/index.scss";
 
 import { Navbar } from "widjets/Navbar";
 import { Sidebar } from "widjets/Sidebar";
-import { AppRouter } from "./providers/router";
 import { PageLoader } from "shared/ui/PageLoader/PageLoader";
+import { AppRouter } from "./providers/router";
 
 const App: React.FC = () => {
   const { theme } = useTheme();
   // const { t } = useTranslation('translation');
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback={<PageLoader/>}>
+      <Suspense fallback={<PageLoader />}>
         <Navbar />
 
         <div className="contentPage">
